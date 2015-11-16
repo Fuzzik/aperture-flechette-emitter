@@ -2,7 +2,7 @@ AddCSLuaFile()
 
 -- Most of the code below is edited from the flechette gun by Garry
 SWEP.PrintName = "Aperture Flechette Emitter"
-SWEP.Author	= "Fuzzik543"
+SWEP.Author = "Fuzzik543"
 SWEP.Purpose = "Left click to primary fire, Right click to secondary fire"
 
 SWEP.Slot = 2
@@ -13,7 +13,7 @@ SWEP.AdminOnly = true
 SWEP.DrawAmmo = false
 
 SWEP.ViewModel = Model( "models/weapons/v_portalgun.mdl" )
-SWEP.WorldModel	= Model( "models/weapons/w_irifle.mdl" )
+SWEP.WorldModel = Model( "models/weapons/w_irifle.mdl" )
 SWEP.ViewModelFOV = 55
 
 SWEP.Primary.ClipSize = -1
@@ -21,10 +21,10 @@ SWEP.Primary.DefaultClip = -1
 SWEP.Primary.Automatic = true
 SWEP.Primary.Ammo = "none"
 
-SWEP.Secondary.ClipSize	= -1
+SWEP.Secondary.ClipSize = -1
 SWEP.Secondary.DefaultClip = -1
 SWEP.Secondary.Automatic = true
-SWEP.Secondary.Ammo	= "none"
+SWEP.Secondary.Ammo = "none"
 
 game.AddParticles( "particles/hunter_flechette.pcf" )
 game.AddParticles( "particles/hunter_projectile.pcf" )
