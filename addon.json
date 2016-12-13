@@ -1,0 +1,12 @@
+{
+	"title"		:	"Aperture Flechette Emitter",
+	"type"		:	"weapon",
+	"tags"		:	[ "fun", "comic" ],
+	"ignore"	:
+	[
+		".git*",
+		".gitattributes",
+		".gitignore",
+		"*.md"
+	]
+}
