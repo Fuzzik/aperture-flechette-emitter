@@ -2,8 +2,8 @@ AddCSLuaFile()
 
 -- Most of the code below is edited from the flechette gun by Garry
 SWEP.PrintName = "Aperture Flechette Emitter"
-SWEP.Author = "Fuzzik543"
-SWEP.Purpose = "Left click to primary fire, Right click to secondary fire"
+SWEP.Author = "Fuzzik"
+SWEP.Purpose = "Left click to primary fire; right click to secondary fire"
 
 SWEP.Slot = 2
 SWEP.SlotPos = 3
