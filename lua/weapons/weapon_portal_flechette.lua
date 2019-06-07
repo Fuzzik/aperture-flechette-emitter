@@ -42,50 +42,56 @@ end
 
 -- Primary attack
 function SWEP:PrimaryAttack()
+
 	self:SetNextPrimaryFire( CurTime() + 0.1 )
 
 	self:EmitSound( ShootSound )
 	self:ShootEffects( self )
 
-	-- The rest is only done on the server
-	if ( !SERVER ) then return end
+	if ( CLIENT ) then return end
+
+	SuppressHostEvents( NULL ) -- Do not suppress the flechette effects
+
+	local ent = ents.Create( "hunter_flechette" )
+	if ( !IsValid( ent ) ) then return end
 
 	local Forward = self.Owner:EyeAngles():Forward()
 
-	local ent = ents.Create( "hunter_flechette" )
+	ent:SetPos( self.Owner:GetShootPos() + Forward * 32 )
+	ent:SetAngles( self.Owner:EyeAngles() )
+	ent:SetOwner( self.Owner )
+	ent:Spawn()
+	ent:Activate()
 
-	if ( IsValid( ent ) ) then
-		ent:SetPos( self.Owner:GetShootPos() + Forward * 32 )
-		ent:SetAngles( self.Owner:EyeAngles() )
-		ent:Spawn()
+	ent:SetVelocity( Forward * 2000 )
 
-		ent:SetVelocity( Forward * 2000 )
-		ent:SetOwner( self.Owner )
-	end
 end
 
 -- Secondary attack
 function SWEP:SecondaryAttack()
+
 	self:SetNextSecondaryFire( CurTime() + 0.1 )
 
 	self:EmitSound( ShootSound2 )
 	self:ShootEffects( self )
 
-	-- The rest is only done on the server
-	if ( !SERVER ) then return end
+	if ( CLIENT ) then return end
+
+	SuppressHostEvents( NULL ) -- Do not suppress the flechette effects
+
+	local ent = ents.Create( "hunter_flechette" )
+	if ( !IsValid( ent ) ) then return end
 
 	local Forward = self.Owner:EyeAngles():Forward()
 
-	local ent = ents.Create( "hunter_flechette" )
+	ent:SetPos( self.Owner:GetShootPos() + Forward * 32 )
+	ent:SetAngles( self.Owner:EyeAngles() )
+	ent:SetOwner( self.Owner )
+	ent:Spawn()
+	ent:Activate()
 
-	if ( IsValid( ent ) ) then
-		ent:SetPos( self.Owner:GetShootPos() + Forward * 32 )
-		ent:SetAngles( self.Owner:EyeAngles() )
-		ent:Spawn()
+	ent:SetVelocity( Forward * 2000 )
 
-		ent:SetVelocity( Forward * 2000 )
-		ent:SetOwner( self.Owner )
-	end
 end
 
 -- Weapon does not drop upon death
