@@ -1,3 +1,7 @@
+-- Comment out the ep2 mount check so people can use their own ep2 assets even
+-- if they don't have the game properly mounted
+--if (!IsMounted("ep2")) then return end
+
 AddCSLuaFile()
 
 -- Most of the code below is edited from the flechette gun by Garry
