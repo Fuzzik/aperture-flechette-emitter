@@ -1,6 +1,6 @@
--- Comment out the ep2 mount check so people can use their own ep2 assets even
--- if they don't have the game properly mounted
---if (!IsMounted("ep2")) then return end
+-- Comment out the ep2/portal mount check so people can use their own
+-- assets even if they don't have the games properly mounted
+--if (!IsMounted("ep2") or !IsMounted("portal")) then return end
 
 AddCSLuaFile()
 
