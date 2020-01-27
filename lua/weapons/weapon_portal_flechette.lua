@@ -40,6 +40,10 @@ end
 function SWEP:Reload()
 end
 
+function SWEP:CanBePickedUpByNPCs()
+    return true
+end
+
 -- Primary attack
 function SWEP:PrimaryAttack()
     self:SetNextPrimaryFire(CurTime() + 0.1)
@@ -55,7 +59,7 @@ function SWEP:PrimaryAttack()
     
     if (!IsValid(ent)) then return end
     
-    local Forward = self:GetOwner():EyeAngles():Forward()
+    local Forward = self:GetOwner():GetAimVector()
     
     ent:SetPos(self:GetOwner():GetShootPos() + Forward * 32)
     ent:SetAngles(self:GetOwner():EyeAngles())
@@ -81,7 +85,7 @@ function SWEP:SecondaryAttack()
     
     if (!IsValid(ent)) then return end
     
-    local Forward = self:GetOwner():EyeAngles():Forward()
+    local Forward = self:GetOwner():GetAimVector()
     
     ent:SetPos(self:GetOwner():GetShootPos() + Forward * 32)
     ent:SetAngles(self:GetOwner():EyeAngles())
